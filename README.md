@@ -13,6 +13,8 @@ The automation uses Terraform, which relies on state management. Using the Docke
 `docker run -it -v /<PATH-TO-YOUR-LOCAL-1CLICKECK-REPO>/1ClickECK:/1ClickECK 1ClickClient /bin/bash`
 
 ## Configure Cloud Access
+These configuration are run inside the docker container.
+
 ### AWS
 * Run `aws configure`
 
@@ -39,3 +41,5 @@ The automation uses Terraform, which relies on state management. Using the Docke
 
 ## How to run 1ClickECK
 Visit [`https://github.com/sunileman/1ClickECK#deployment`](https://github.com/sunileman/1ClickECK#deployment) for instructions.
+
+`Note` -  Since the 1clickeck-client requires mounting a local volume (1ClickECK repo), ll files (ie `terraform.tfvars`) can be modified either from your local host or within the docker conatiner.
