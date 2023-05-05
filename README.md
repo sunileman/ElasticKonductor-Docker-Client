@@ -2,6 +2,9 @@
 
 1ClickECK-Docker-Client is used in conjunction with `https://github.com/sunileman/1ClickECK` to deploy the 1ClickECK client. The objective is to make it easy to use 1ClickECK without the worry or effort of building a client node.
 
+## Architecture
+[![2023-05-05-11-39-00.jpg](https://i.postimg.cc/VL2W6kZQ/2023-05-05-11-39-00.jpg)](https://postimg.cc/QHkTYhr0)
+
 ## Getting Started
 * Have Docker installed on your machine
 * Clone `https://github.com/sunileman/1ClickECK`
@@ -10,7 +13,7 @@
 The automation uses Terraform, which relies on state management. Using the Docker file system alone will not provide the state capabilities required to run the tool. Therefore, during Docker runtime, mounting the local volume with the 1ClickECK Git repo is required. This will allow users to leave the Docker instance without losing deployment state.
 
 ## Deployment
-`docker run -it -v /<PATH-TO-YOUR-LOCAL-1CLICKECK-REPO>/1ClickECK:/1ClickECK 1ClickClient /bin/bash`
+`docker run -it -v /<PATH-TO-YOUR-LOCAL-1CLICKECK-REPO>/1ClickECK:/1ClickECK 1clickeck-client /bin/bash`
 
 ## Configure Cloud Access
 These configuration are run inside the docker container.
@@ -43,3 +46,11 @@ These configuration are run inside the docker container.
 Visit [`https://github.com/sunileman/1ClickECK#deployment`](https://github.com/sunileman/1ClickECK#deployment) for instructions.
 
 `Note` -  Since the 1clickeck-client requires mounting a local volume (1ClickECK repo), ll files (ie `terraform.tfvars`) can be modified either from your local host or within the docker conatiner.
+
+
+
+### KUBECTL
+The Docker image comes with a pre-installed version of `kubectl`, however, it may not be compatible with the version of Kubernetes deployed with `1ClickECK`. To resolve this issue, you can rebuild the image by modifying the `ENV KUBECTL_VERSION` environment variable within the Docker file to specify the preferred version of kubectl
+
+For example to build a image with version `1.24.0`
+`docker build --build-arg KUBECTL_VERSION=1.24.0 -t 1clickeck-client`
