@@ -1,5 +1,5 @@
 # Use the latest Ubuntu image as the base
-##version 1.2
+##version 1.3
 FROM amd64/ubuntu:22.04
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -56,7 +56,7 @@ RUN	curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |  tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 RUN apt-get update && apt-get install google-cloud-cli
-
+RUN apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
 
 ################################
 # Install kubectl
