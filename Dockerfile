@@ -103,5 +103,5 @@ apt-get update && \
 apt-get install helm
 
 
-WORKDIR /1ClickECK
+WORKDIR /ElasticKonductor
 
