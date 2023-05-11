@@ -3,7 +3,7 @@
 ElasticKonductor-Docker-Client is used in conjunction with `https://github.com/sunileman/ElasticKonductor` to deploy the ElasticKonductor client. The objective is to make it easy to use ElasticKonductor without the worry or effort of building a client node.
 
 ## Architecture
-[![2023-05-05-11-39-00.jpg](https://i.postimg.cc/VL2W6kZQ/2023-05-05-11-39-00.jpg)](https://postimg.cc/QHkTYhr0)
+[![1-Click-Page-1-4.png](https://i.postimg.cc/tgWWmhvt/1-Click-Page-1-4.png)](https://postimg.cc/d7QhhTYL)
 
 ## Getting Started
 * Have Docker installed on your machine
