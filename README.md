@@ -41,10 +41,10 @@ These configuration are run inside the docker container.
 
 ### GCP
 * https://cloud.google.com/kubernetes-engine/docs/how-to/cluster-access-for-kubectl#gcloud
-* run gcloud init to initialize your client
-* run gcloud auth application-default login
-* Note - project must be set in terraform.tfvars. Project value within tags variable is used to tag instances with project value. Not the same as gcp project which is set in terrform.tfvars.
-* To set your gcp project, run export TF_VAR_gcp_project="your-project-name"
+* run `gcloud init` to initialize your client
+* run `gcloud auth application-default login --no-launch-browser`
+* Note - gcp project must be set in `terraform.tfvars` or set as an env variable `export TF_VAR_gcp_project="your-project-name"`.  
+* Project value within `terraform.tfvars` tags variable is used to tag instances with project value. This is different from the gcp project you are assigned to. 
 
 ## How to run ElasticKonductor
 Visit [`https://github.com/sunileman/ElasticKonductor#deployment`](https://github.com/sunileman/ElasticKonductor#deployment) for instructions.
