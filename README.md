@@ -58,3 +58,12 @@ The Docker image comes with a pre-installed version of `kubectl`, however, it ma
 
 For example to build a image with version `1.24.0`
 `docker build --build-arg KUBECTL_VERSION=1.24.0 -t ElasticKonductor-client`
+
+
+### Errors
+
+Error
+`WARNING: The requested image's platform (linux/amd64) does not match the detected host platform (linux/arm64/v8) and no specific platform was requested`
+
+Solution
+Ignore this message
