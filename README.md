@@ -42,6 +42,7 @@ These configuration are run inside the docker container.
 ### GCP
 * Run `gcloud init` to initialize your client
 * Note: The project must be set in `terraform.tfvars`. The project value within the `tags` variable is used to tag instances with the project value. This is not the same as the GCP project, which is set in `terraform.tfvars`.
+* Set your gcp project as a env variable `export TF_VAR_gcp_project="your-gcp-project"`
 
 ## How to run ElasticKonductor
 Visit [`https://github.com/sunileman/ElasticKonductor#deployment`](https://github.com/sunileman/ElasticKonductor#deployment) for instructions.
