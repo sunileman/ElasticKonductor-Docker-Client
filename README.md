@@ -8,6 +8,7 @@ ElasticKonductor-Docker-Client is used in conjunction with `https://github.com/s
 ## Getting Started
 * Have Docker installed on your machine
 * Clone `https://github.com/sunileman/ElasticKonductor`
+* Pull image `docker pull sunmanreg.azurecr.io/elastickondoctor-client:latest` and then tag the image `docker tag sunmanreg.azurecr.io/elastickondoctor-client:latest elastickondoctor-client:latest`
 
 **Note**
 The automation uses Terraform, which relies on state management. Using the Docker file system alone will not provide the state capabilities required to run the tool. Therefore, during Docker runtime, mounting the local volume with the ElasticKonductor Git repo is required. This will allow users to leave the Docker instance without losing deployment state.
