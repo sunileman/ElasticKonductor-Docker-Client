@@ -60,28 +60,9 @@ For example to build a image with version `1.24.0`
 `docker build --build-arg KUBECTL_VERSION=1.24.0 -t ElasticKonductor-client`
 
 
-### Opentelemetry Demo Port Forwarding
-Since ElasticKonductor client runs within a docker container, port forwarding should occur from the local machine you want to reach the Demo UI.  To do this, the steps are simple.  Run the following steps on `YOUR LOCAL HOST/MACHINE`, not within your docker instance
-
-* Verify azure CLI is install on your local machine
-    * `az aks install-cli`
-* Install `kubectl`
-    * `https://kubernetes.io/docs/tasks/tools/install-kubectl-macos/#install-with-homebrew-on-macos`
-    * ie for mac: `brew install kubectl`
-* Fetch the resource group and cluster name.  Run this within the docker client
-    * `./elastickonductor.sh -c azure -inf`
-    * The output will look similar to this
-    ```
-    K8s Cluster Name: 1ClickECK-sunman-midge
-    K8s Region: eastus
-    Resource group name: "1ClickECK-sunman-midge" 
-    ```
-* Set your local kubectl by using the output from the previous step
-    * `az aks get-credentials --resource-group <resource group name> --name <cluster name>`
-* Expose the frontendproxy service
-    * `kubectl port-forward svc/open-telemetry-frontendproxy 8080:8080`
-* To generater spans from the browser to be properly collected
-    * `kubectl port-forward svc/open-telemetry-otelcol 4318:4318`
+### Opentelemetry Demo UI
+* run `kubectl get svc open-telemetry-frontendproxy`
+* Reach the UI by using `EXTERNAL-IP`:8080
 
 
 
