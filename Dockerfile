@@ -9,7 +9,7 @@ apt-get update -y && \
 # Install Unzip
 apt-get install unzip -y && \
 # need wget
-apt-get install wget -y && \
+apt-get install wget jp -y && \
 # vim
 apt-get install vim curl git -y
 
