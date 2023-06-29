@@ -49,6 +49,24 @@ These configuration are run inside the docker container.
 ## How to run ElasticKonductor
 Visit [`https://github.com/sunileman/ElasticKonductor#deployment`](https://github.com/sunileman/ElasticKonductor#deployment) for instructions.
 
+#### Required Arguments 
+
+`-c` [aws|azure|gcp|ess]
+
+`-b` [all|k8s|otel] 
+
+`-d` Destroy all assets created by the automation
+
+`-r` disable openebs
+
+`de` destroy ECK
+
+`do` destroy Open Telemetry
+
+`i` get cluster info 
+
+`int` get cluster infra info 
+
 `Note` -  Since the ElasticKonductor-client requires mounting a local volume (ElasticKonductor repo), ll files (ie `terraform.tfvars`) can be modified either from your local host or within the docker conatiner.
 
 
