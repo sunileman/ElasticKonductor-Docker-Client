@@ -49,6 +49,8 @@ These configuration are run inside the docker container.
 ## How to run ElasticKonductor
 Visit [`https://github.com/sunileman/ElasticKonductor#deployment`](https://github.com/sunileman/ElasticKonductor#deployment) for instructions.
 
+`Note`: The automation requires `tags.project` variable to be set in the `.[aws|azure]/terraform.tfvars`.  Set the variable with your username, no special characters. Keep it short
+
 #### Required Arguments 
 
 `-c` [aws|azure|gcp|ess]
