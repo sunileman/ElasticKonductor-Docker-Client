@@ -17,7 +17,7 @@ The automation uses Terraform, which relies on state management. Using the Docke
 `docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor elastickondoctor-client /bin/bash`
 
 ## Configure Cloud Access
-These configuration are run inside the docker container.
+These configuration are run inside the docker container and needs to be run **EACH** time you enter the conatiner.
 
 ### AWS
 * Run `aws configure`
