@@ -1,6 +1,6 @@
 #!/bin/bash
 
-dversion=1.4
+dversion=1.5
 se -e
 
 docker build -t elastickondoctor-client .
