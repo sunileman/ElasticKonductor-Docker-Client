@@ -19,10 +19,12 @@ apt-get install vim curl git -y
 ################################
 
 # Download terraform for linux
-RUN wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip
+#RUN wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip
 
 # Unzip
-RUN unzip terraform_1.4.6_linux_amd64.zip
+#RUN unzip terraform_1.4.6_linux_amd64.zip
+RUN unzip terraform_1.5.5_linux_amd64.zip
 
 # Move to local bin
 RUN mv terraform /usr/local/bin/
@@ -90,7 +92,7 @@ RUN set -ex \
     && pyenv global $PYTHON_VERSION \
     && pyenv rehash
 
-RUN pip install python-hcl2 boto3
+RUN pip install python-hcl2 boto3 eland
 
 
 ################################
@@ -102,6 +104,16 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/helm.
 apt-get update && \
 apt-get install helm
 
+
+
+################################
+# Install additional packages
+################################
+RUN \
+apt-get install jq -y
+
+
+RUN pip install requests PyYAML
 
 WORKDIR /ElasticKonductor
 
