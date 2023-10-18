@@ -1,9 +1,9 @@
 #!/bin/bash
 
-dversion=1.5
-se -e
+dversion=1.15
+set -e
 
-docker build -t elastickondoctor-client .
+docker build -t elastickondoctor-client:latest .
 
 docker tag elastickondoctor-client:latest sunmanreg.azurecr.io/elastickondoctor-client:${dversion}
 docker tag sunmanreg.azurecr.io/elastickondoctor-client:${dversion} sunmanreg.azurecr.io/elastickondoctor-client:latest
