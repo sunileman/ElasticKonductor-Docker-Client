@@ -20,11 +20,14 @@ apt-get install vim curl git -y
 
 # Download terraform for linux
 #RUN wget https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip
-RUN wget https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip
+#RUN wget https://releases.hashicorp.com/terraform/1.5.5/terraform_1.5.5_linux_amd64.zip
+RUN wget https://releases.hashicorp.com/terraform/1.7.5/terraform_1.7.5_linux_amd64.zip
 
 # Unzip
 #RUN unzip terraform_1.4.6_linux_amd64.zip
-RUN unzip terraform_1.5.5_linux_amd64.zip
+#RUN unzip terraform_1.5.5_linux_amd64.zip
+RUN unzip terraform_1.7.5_linux_amd64.zip
+
 
 # Move to local bin
 RUN mv terraform /usr/local/bin/
@@ -58,13 +61,13 @@ RUN	curl -sL https://aka.ms/InstallAzureCLIDeb | bash
 RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" |  tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
 RUN curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
 RUN apt-get update && apt-get install google-cloud-cli
-RUN apt-get install google-cloud-sdk-gke-gcloud-auth-plugin
+RUN apt-get install google-cloud-sdk-gke-gcloud-auth-plugin -y
 
 ################################
 # Install kubectl
 ################################
 #https://kubernetes.io/releases/
-ENV KUBECTL_VERSION 1.26.4
+ENV KUBECTL_VERSION 1.28.8
 RUN curl -LO https://dl.k8s.io/release/v${KUBECTL_VERSION}/bin/linux/amd64/kubectl
 RUN chmod +x ./kubectl
 RUN mv ./kubectl /usr/local/bin
