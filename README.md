@@ -15,6 +15,21 @@ The automation uses Terraform, which relies on state management. Using the Docke
 ## Deployment
 `docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor sunmanreg.azurecr.io/elastickondoctor-client:latest /bin/bash`
 
+### Pull latest images
+To pull latest elastickonductor client image, the existing images must be deleted.  Run the following
+
+```
+docker ps -a | grep 'sunmanreg.azurecr.io/elastickondoctor-client:latest'
+```
+
+Then redeploy
+
+```
+docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor sunmanreg.azurecr.io/elastickondoctor-client:latest /bin/bash
+```
+
+
+
 ## Configure Cloud Access
 These configuration are run inside the docker container and needs to be run **EACH** time you enter the conatiner.
 
