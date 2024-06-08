@@ -13,21 +13,14 @@ ElasticKonductor-Docker-Client is used in conjunction with `https://github.com/s
 The automation uses Terraform, which relies on state management. Using the Docker file system alone will not provide the state capabilities required to run the tool. Therefore, during Docker runtime, mounting the local volume with the ElasticKonductor Git repo is required. This will allow users to leave the Docker instance without losing deployment state.
 
 ## Deployment
-`docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor sunmanreg.azurecr.io/elastickondoctor-client:latest /bin/bash`
+`docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor sunmanreg.azurecr.io/elastickondoctor-client:1.21 /bin/bash`
 
 ### Pull latest images
-To pull latest elastickonductor client image, the existing images must be deleted.  Run the following
+To pull latest elastickonductor client image.  Run the following
 
 ```
-docker ps -a | grep 'sunmanreg.azurecr.io/elastickondoctor-client:latest'
+docker ps -a | grep 'sunmanreg.azurecr.io/elastickondoctor-client:1.21'
 ```
-
-Then redeploy
-
-```
-docker run -it -v /<PATH-TO-YOUR-LOCAL-ElasticKonductor-REPO>/ElasticKonductor:/ElasticKonductor sunmanreg.azurecr.io/elastickondoctor-client:latest /bin/bash
-```
-
 
 
 ## Configure Cloud Access
